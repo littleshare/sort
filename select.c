@@ -43,22 +43,24 @@ void PrintNum_Int(int *num)
 
 	}      
 	    
-void BubbleSort_Int(int *num)
+void SelectSort_Int(int *num)
 	{
-		int i,j;
+		int i,j,Record;
 		int numsize=CountNum(num),tmp;
 
 		for(i=0;i<numsize-1;i++)
 		{
-			for(j=0;j<numsize-1-i;j++)
+			tmp = num[i];
+			for(j=i+1;j<numsize;j++)
 			{
-				if(num[numsize-1-j]<num[numsize-2-j])				//若底部数据大于顶部
+				if(num[j]<tmp)				                //若数据小于最小值
 				{
-				tmp = num[numsize-1-j];						//互换位置
-				num[numsize-1-j]=num[numsize-2-j];
-				num[numsize-2-j]=tmp;
+				tmp = num[j];						              //更新最小值
+				Record = j;											      //记下更小值出现位置
 				}
 			}
+			num[Record] = num[i];										//覆盖最小值的位置
+			num[i] = tmp;														//把最小值往前排
 		}
 
 	}
