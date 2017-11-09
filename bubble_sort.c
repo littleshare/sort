@@ -17,29 +17,33 @@ void main()
 }
 	    
 void PrintNum_Int(int *num)
+	{
+		int i;
+
+		for(i=0;i<(sizof(num);i++)
 		{
-			int i;
+			printf("%d__",num[i]);	
+		} 
 
-			for(i=0;i<(sizof(num);i++)
-			{
-				printf("%d__",num[i]);	
-			} 
-
-		}      
+	}      
 	    
 void BubbleSort_Int(int *num)
+	{
+		int i,j;
+		int numsize=sizeof(num),tmp;
+
+		for(i=0;i<numsize-1;i++)
+		{
+			for(j=0;j<numsize-1-i;j++)
 			{
-				int i,j;
-				int numsize=sizeof(num),tmp;
-				
-				for(i=0;i<numsize-1;i++)
+				if(num[numsize-1-j]<num[numsize-2-j])				//若底部数据大于顶部
 				{
-					for(j=0;j<numsize-1-i;j++)
-					{
-						if(num[numsize-1-j]<num[numsize-2-j])				//若底部数据大于顶部
-					
-					}
+				tmp = num[numsize-1-j];						//互换位置
+				num[numsize-1-j]=num[numsize-2-j];
+				num[numsize-2-j]=tmp;
 				}
-			
 			}
+		}
+
+	}
 	    
